@@ -11,7 +11,7 @@ spec:
       chart: signoz
       version: '0.79.*' # Specify the version or version range you want to deploy
       sourceRef:
-        kind: HelmChart
+        kind: HelmRepository
         name: signoz # Name of the HelmChart resource
         namespace: monitoring # Namespace of the HelmChart resource (must match)
   targetNamespace: monitoring # The namespace where the Helm chart will be installed
