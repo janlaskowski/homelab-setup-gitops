@@ -8,11 +8,11 @@ spec:
   chart:
     spec:
       # Reference the HelmChart resource you defined
-      chart: signoz
+      chart: k8s-infra
       version: '0.79.*' # Specify the version or version range you want to deploy
       sourceRef:
         kind: HelmRepository
-        name: k8s-infra # Name of the HelmChart resource
+        name: signoz # Name of the HelmChart resource
         namespace: monitoring # Namespace of the HelmChart resource (must match)
   targetNamespace: monitoring # The namespace where the Helm chart will be installed
   install:
