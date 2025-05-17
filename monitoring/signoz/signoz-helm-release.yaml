@@ -22,7 +22,7 @@ spec:
       cloud: others
       clusterName: k8s-homelab
       deploymentEnvironment: testing
-    otelCollectorEndpoint: monitoring-signoz-otel-collector.monitoring.svc:4317
+    otelCollectorEndpoint: monitoring-signoz-k8s-infra-otel-agent.monitoring.svc:4317
     otelInsecure: true
     presets:
       otlpExporter:
