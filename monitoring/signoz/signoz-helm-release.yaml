@@ -4,15 +4,15 @@ metadata:
   name: signoz # Give your release a name
   namespace: monitoring   # Namespace where the HelmRelease resource lives (can be different from targetNamespace)
 spec:
-  interval: 5m0s # How often to reconcile the release
+  interval: 1m0s # How often to reconcile the release
   chart:
     spec:
-      # Reference the HelmChart resource you defined
+      # Specify the chart to deploy
       chart: k8s-infra
-      version: '0.79.*' # Specify the version or version range you want to deploy
+      version: '0.12.*' # Specify the version or version range you want to deploy
       sourceRef:
         kind: HelmRepository
-        name: signoz # Name of the HelmChart resource
+        name: signoz # Name of the HelmChart repo refrence
         namespace: monitoring # Namespace of the HelmChart resource (must match)
   targetNamespace: monitoring # The namespace where the Helm chart will be installed
   install:
