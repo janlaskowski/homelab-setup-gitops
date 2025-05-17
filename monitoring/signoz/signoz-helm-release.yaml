@@ -12,8 +12,20 @@ spec:
       version: '0.79.*' # Specify the version or version range you want to deploy
       sourceRef:
         kind: HelmRepository
-        name: signoz # Name of the HelmChart resource
+        name: k8s-infra # Name of the HelmChart resource
         namespace: monitoring # Namespace of the HelmChart resource (must match)
   targetNamespace: monitoring # The namespace where the Helm chart will be installed
   install:
     createNamespace: true
+  values:
+    global:
+      cloud: others
+      clusterName: k8s-homelab
+      deploymentEnvironment: testing
+  otelCollectorEndpoint: monitoring-signoz-otel-collector.monitoring.svc:4317
+  otelInsecure: true
+  presets:
+    otlpExporter:
+      enabled: true
+    loggingExporter:
+      enabled: true
